@@ -1,4 +1,4 @@
-// swift-tools-version:5.5
+// swift-tools-version: 5.9
 //===--- Package.swift ----------------------------------------*- swift -*-===//
 //
 // This source file is part of the Swift Numerics open source project
@@ -17,6 +17,15 @@ let excludedFilenames = ["CMakeLists.txt", "README.md"]
 let package = Package(
   
   name: "swift-numerics",
+  defaultLocalization: "en",
+  platforms: [
+    .iOS(.v15),
+    .macOS(.v14),
+    .tvOS(.v15),
+    .visionOS(.v1),
+    .watchOS(.v10)
+  ],
+
   products: [
     .library(name: "ComplexModule", targets: ["ComplexModule"]),
     .library(name: "Numerics", targets: ["Numerics"]),
